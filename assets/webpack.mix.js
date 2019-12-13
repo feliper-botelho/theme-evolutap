@@ -2,6 +2,7 @@ const mix = require('laravel-mix');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
 /*
  |--------------------------------------------------------------------------
@@ -14,13 +15,6 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
  |
  */
 
-// mix.babel([
-//     'resources/js/images.js',
-//     'resources/js/trajetoria.js',
-//     'resources/js/scroller.js',
-//     'resources/js/menu-subpages.js',
-//     'resources/js/codigo-etica.js',
-// ], 'public/js/all.js');
 mix.js('resources/js/main.js', 'public/js')
 mix.sass('resources/scss/main.scss', 'public/css')
     .sourceMaps(true, 'source-map')
@@ -29,10 +23,19 @@ mix.webpackConfig({
     plugins: [
         new CopyWebpackPlugin([{
             from: 'resources/images',
+            to: '../resources/images', // Laravel mix will place this in 'public/img'
+        }]),
+        new ImageminWebpWebpackPlugin()
+    ]
+});
+mix.webpackConfig({
+    plugins: [
+        new CopyWebpackPlugin([{
+            from: 'resources/images',
             to: 'images', // Laravel mix will place this in 'public/img'
         }]),
         new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg)$/i,
+            test: /\.(jpe?g|png|gif|svg|webp)$/i,
             plugins: [
                 imageminMozjpeg({
                     quality: 80,
@@ -41,5 +44,6 @@ mix.webpackConfig({
         })
     ]
 });
+
 mix.setPublicPath('public');
 mix.setResourceRoot('..');
