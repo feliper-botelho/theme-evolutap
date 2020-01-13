@@ -1,7 +1,5 @@
 const mix = require('laravel-mix');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
 const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
 /*
@@ -33,15 +31,7 @@ mix.webpackConfig({
         new CopyWebpackPlugin([{
             from: 'resources/images',
             to: 'images', // Laravel mix will place this in 'public/img'
-        }]),
-        new ImageminPlugin({
-            test: /\.(jpe?g|png|gif|svg|webp)$/i,
-            plugins: [
-                imageminMozjpeg({
-                    quality: 80,
-                })
-            ]
-        })
+        }])
     ]
 });
 
