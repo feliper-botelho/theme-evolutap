@@ -1,9 +1,32 @@
-
 html {
     font-size: 100%;
     overflow-x: hidden;
 }
+
 body {
-    font-family: 'Open Sans';
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
+    @extend .pt-5;
+    @extend .pt-sm-4;
+}
+
+.banner {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    background-image: url(../images/blog-1.webp);
+    @include flex-center;
+
+    .no-webp & {
+        background-image: url(../images/blog-1.png);
+    }
+}
+
+.btn-one {
+    @include btn-default(#f00);
+}
+
+.btn-two {
+    @include btn-default;
 }

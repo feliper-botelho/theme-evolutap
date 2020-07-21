@@ -24,10 +24,7 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
-        "imagemin-webp-webpack-plugin": "^3.3.1"
-    },
-    "dependencies": {
-        "swiper": "^5.2.1",
-        "jquery": ">=3.4.0"
+        "imagemin-webp-webpack-plugin": "^3.3.1",
+        "swiper": "^5.2.1"
     }
 }

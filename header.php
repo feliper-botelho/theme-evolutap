@@ -39,7 +39,7 @@
                         'theme_location'    => 'primary',
                         'container'       => 'div',
                         'container_id'    => 'main-nav',
-                        'container_class' => 'collapse navbar-collapse justify-content-center d-none d-lg-flex',
+                        'container_class' => 'collapse navbar-collapse justify-content-end d-none d-lg-flex',
                         'menu_id'         => false,
                         'menu_class'      => 'navbar-nav',
                         'depth'           => 3,
@@ -48,23 +48,31 @@
                     ));
                     ?>
 
-                    <!-- <div id="menu-mobile" class="mobile-menu">
-                    <?php
-                    // wp_nav_menu(array(
-                    // 'theme_location'    => 'primary',
-                    // 'container'       => 'div',
-                    // 'container_id'    => 'main-nav-mobile',
-                    // 'container_class' => 'd-flex flex-column',
-                    // 'menu_id'         => false,
-                    // 'menu_class'      => 'navbar-nav',
-                    // 'depth'           => 3,
-                    // 'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                    // 'walker'          => new wp_bootstrap_navwalker()
-                    // ));
-                    ?>
-                </div> -->
+                    <div id="menu-mobile" class="mobile-menu d-flex d-lg-none flex-column align-items-center justify-content-start">
+                        <div class="close-button">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="navbar-brand">
+                            <a href="<?= get_home_url() ?>">
+                                <img class="img-fluid" src="<?= wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0] ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                            </a>
+                        </div>
+                        <?php
+                        wp_nav_menu(array(
+                        'theme_location'    => 'primary',
+                        'container'       => 'div',
+                        'container_id'    => 'main-nav-mobile',
+                        'container_class' => 'd-flex flex-column',
+                        'menu_id'         => false,
+                        'menu_class'      => 'navbar-nav',
+                        'depth'           => 3,
+                        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                        'walker'          => new wp_bootstrap_navwalker()
+                        ));
+                        ?>
+                    </div>
 
-                    <div class="d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-center justify-content-center d-lg-none">
                         <button id="hamburguer-mobile" class="hamburger hamburger--collapse ml-4" aria-label="toggler menu" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
