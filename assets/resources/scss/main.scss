@@ -1,18 +1,35 @@
 // fonts
 @import "fonts";
-// import fontawesome
-// @import 'fontawesome/brands.scss';
-// @import 'fontawesome/regular.scss';
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-// import bootstrap
-@import "variables";
-@import "~bootstrap/scss/bootstrap";
+// fontawesome
 
+// tirar o comentario dos components que for usar, 
+// exemplo swiper, ele só vem o core do swiper, não vem com os components por padrão
+
+@import "~@fortawesome/fontawesome-free/scss/solid";
+// @import "~@fortawesome/fontawesome-free/scss/brands";
+// @import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+// variaveis
+@import "variables";
+// bootstrap
+@import "~bootstrap/scss/bootstrap";
+// hamburger menu
 @import "hamburgers/hamburgers";
+// swiper e components
+@import "~swiper/swiper";
+// @import "~swiper/swiper/components/a11y/a11y";
+// @import "~swiper/swiper/components/effect-coverflow/effect-coverflow";
+// @import "~swiper/swiper/components/effect-cube/effect-cube";
+// @import "~swiper/swiper/components/effect-fade/effect-fade";
+// @import "~swiper/swiper/components/effect-flip/effect-flip";
+// @import "~swiper/swiper/components/lazy/lazy";
+// @import "~swiper/swiper/components/navigation/navigation";
+// @import "~swiper/swiper/components/pagination/pagination";
+// @import "~swiper/swiper/components/scrollbar/scrollbar";
+// @import "~swiper/swiper/components/thumbs/thumbs";
+// @import "~swiper/swiper/components/zoom/zoom";
+
 // styles
 @import "mixins";
 @import "includes/includes";
-@import "~swiper/swiper";
 @import "styles";
