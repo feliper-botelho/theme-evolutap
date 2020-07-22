@@ -1,6 +1,6 @@
-const mix = require('laravel-mix');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+const mix = require("laravel-mix");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
 /*
  |--------------------------------------------------------------------------
@@ -13,27 +13,32 @@ const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
  |
  */
 
-mix.js('resources/js/main.js', 'public/js')
-mix.sass('resources/scss/main.scss', 'public/css')
-    .sourceMaps(true, 'source-map')
-    .copyDirectory('resources/fonts', 'public/fonts');
+mix.js("resources/js/main.js", "public/js");
+mix
+  .sass("resources/scss/main.scss", "public/css")
+  .sourceMaps(true, "source-map")
+  .copyDirectory("resources/fonts", "public/fonts");
 mix.webpackConfig({
-    plugins: [
-        new CopyWebpackPlugin([{
-            from: 'resources/images',
-            to: '../resources/images', // Laravel mix will place this in 'public/img'
-        }]),
-        new ImageminWebpWebpackPlugin()
-    ]
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: "resources/images",
+        to: "../resources/images", // Laravel mix will place this in 'public/img'
+      },
+    ]),
+    new ImageminWebpWebpackPlugin(),
+  ],
 });
 mix.webpackConfig({
-    plugins: [
-        new CopyWebpackPlugin([{
-            from: 'resources/images',
-            to: 'images', // Laravel mix will place this in 'public/img'
-        }])
-    ]
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: "resources/images",
+        to: "images", // Laravel mix will place this in 'public/img'
+      },
+    ]),
+  ],
 });
 
-mix.setPublicPath('public');
-mix.setResourceRoot('..');
+mix.setPublicPath("public");
+mix.setResourceRoot("..");

@@ -25,10 +25,28 @@ body {
 
 .btn-one {
     @include btn-default(#f00);
+    @include flex-center;
+    justify-content: flex-start;
 }
 
 .btn-two {
     @include btn-default;
     background-color: $primary-color;
     background-color: rgba($primary-color, 0.4);
+}
+
+.card {
+    &__title {
+        &--active {
+            color: white;
+        }
+    }
+
+    &__image {}
+
+    .card__title {}
+}
+
+.color-white {
+    color: white;
 }

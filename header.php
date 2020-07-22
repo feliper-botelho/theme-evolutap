@@ -59,21 +59,21 @@
                         </div>
                         <?php
                         wp_nav_menu(array(
-                        'theme_location'    => 'primary',
-                        'container'       => 'div',
-                        'container_id'    => 'main-nav-mobile',
-                        'container_class' => 'd-flex flex-column',
-                        'menu_id'         => false,
-                        'menu_class'      => 'navbar-nav',
-                        'depth'           => 3,
-                        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                        'walker'          => new wp_bootstrap_navwalker()
+                            'theme_location'    => 'primary',
+                            'container'       => 'div',
+                            'container_id'    => 'main-nav-mobile',
+                            'container_class' => 'd-flex flex-column',
+                            'menu_id'         => false,
+                            'menu_class'      => 'navbar-nav',
+                            'depth'           => 3,
+                            'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                            'walker'          => new wp_bootstrap_navwalker()
                         ));
                         ?>
                     </div>
 
                     <div class="d-flex align-items-center justify-content-center d-lg-none">
-                        <button id="hamburguer-mobile" class="hamburger hamburger--collapse ml-4" aria-label="toggler menu" type="button">
+                        <button id="hamburguer-mobile" class="hamburger hamburger--emphatic ml-4" aria-label="toggler menu" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
