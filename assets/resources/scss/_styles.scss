@@ -23,6 +23,7 @@ body {
     }
 }
 
+
 .btn-one {
     @include btn-default(#f00);
     @include flex-center;
@@ -35,10 +36,11 @@ body {
     background-color: rgba($primary-color, 0.4);
 }
 
-.card {
+.card__produtos {
     &__title {
         &--active {
             color: white;
+
         }
     }
 

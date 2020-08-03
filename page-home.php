@@ -31,6 +31,14 @@ get_header();
 
     </main><!-- #main -->
 </div><!-- #primary -->
+<div class="card__produtos">
+    <div class="card__produtos__title active">
+        
+    </div>
+    <div class="card__produtos__image">
+        
+    </div>
+</div>
 
 <?php
 get_footer();
